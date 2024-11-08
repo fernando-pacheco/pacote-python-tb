@@ -14,3 +14,10 @@ markdown_extensions:
 
 # extra_css:
 #   - stylesheets/extra.css # Adicionando estilização css para a documentação
+
+
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [pacote_python_tb]
