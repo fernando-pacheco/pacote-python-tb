@@ -2,7 +2,7 @@
 name = "pacote-python-tb"
 version = "0.1.0"
 description = ""
-authors = ["Fernando Pacheco <fernando.silva@sao.jamef.com.br>"]
+authors = ["Fernando Pacheco <fernandopachecopx@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
@@ -25,3 +25,18 @@ mkdocstrings-python = "^1.12.2"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = "--doctest-modules"
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.taskipy.tasks]
+lint = "blue . && isort ."
+docs = "mkdocs serve"
+pre_test = "task lint"
+test = "pytest -s -x --cov=pacote_python_tb -vv"
+post_test = "coverage html"
