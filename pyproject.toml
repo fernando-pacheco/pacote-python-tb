@@ -6,7 +6,7 @@ authors = ["Fernando Pacheco <fernandopachecopx@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.scripts]
-escalas = "pacote_python_tb.cli:app"
+notas-musicais = "pacote_python_tb.cli:app"
 
 [tool.poetry.dependencies]
 python = "^3.12"
