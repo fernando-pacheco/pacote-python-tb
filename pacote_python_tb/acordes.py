@@ -1,5 +1,3 @@
-from click import Argument
-
 from pacote_python_tb.escalas import NOTAS, escala
 
 GRAUS = {
@@ -21,13 +19,13 @@ def acorde(cifra: str):
     Examples:
         >>> acorde('C')
         {'notas': ['C', 'E', 'G'], 'graus': ['I', 'III', 'V']}
-        
+
         >>> acorde('C+')
         {'notas': ['C', 'E', 'G#'], 'graus': ['I', 'III', 'V+']}
-        
+
         >>> acorde('C°')
         {'notas': ['C', 'D#', 'F#'], 'graus': ['I', 'III-', 'V-']}
-        
+
         >>> acorde('Cm')
         {'notas': ['C', 'D#', 'G'], 'graus': ['I', 'III-', 'V']}
     """
