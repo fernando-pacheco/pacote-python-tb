@@ -82,3 +82,25 @@ def test_escala_entrada_de_escala_nao_existente():
 def test_escala_maior_retorno_correto_notas(tonica, esperado):
     resultado = escala(tonica, 'maior')
     assert resultado['notas'] == esperado
+
+
+@mark.parametrize(
+    'tonica,esperado',
+    [
+        ('C', ['C', 'D', 'D#', 'F', 'G', 'G#', 'A#']),
+        ('C#', ['C#', 'D#', 'E', 'F#', 'G#', 'A', 'B']),
+        ('D', ['D', 'E', 'F', 'G', 'A', 'A#', 'C']),
+        ('D#', ['D#', 'F', 'F#', 'G#', 'A#', 'B', 'C#']),
+        ('E', ['E', 'F#', 'G', 'A', 'B', 'C', 'D']),
+        ('F', ['F', 'G', 'G#', 'A#', 'C', 'C#', 'D#']),
+        ('F#', ['F#', 'G#', 'A', 'B', 'C#', 'D', 'E']),
+        ('G', ['G', 'A', 'A#', 'C', 'D', 'D#', 'F']),
+        ('G#', ['G#', 'A#', 'B', 'C#', 'D#', 'E', 'F#']),
+        ('A', ['A', 'B', 'C', 'D', 'E', 'F', 'G']),
+        ('A#', ['A#', 'C', 'C#', 'D#', 'F', 'F#', 'G#']),
+        ('B', ['B', 'C#', 'D', 'E', 'F#', 'G', 'A']),
+    ],
+)
+def test_escala_menor_retorno_correto_notas(tonica, esperado):
+    resultado = escala(tonica, 'menor')
+    assert resultado['notas'] == esperado
