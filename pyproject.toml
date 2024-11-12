@@ -13,6 +13,11 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 
+[tool.poetry.urls]
+"Documentação" = "https://pacote-python-tb.readthedocs.io/pt/latest/"
+"Códgio" = "https://github.com/fernando-pacheco/pacote-python-tb"
+"Bug Tracker" = "https://github.com/fernando-pacheco/pacote-python-tb/issues"
+
 [tool.poetry.scripts]
 notas-musicais = "pacote_python_tb.cli:app"
 
