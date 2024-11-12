@@ -19,7 +19,12 @@ watch:
   - pacote_python_tb
 
 plugins:
+  - macros
   - mkdocstrings:
       handlers:
         python:
           paths: [pacote_python_tb]
+
+extra:
+  commands:
+    run: poetry run notas-musicais
