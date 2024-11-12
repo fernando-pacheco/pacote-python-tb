@@ -8,10 +8,12 @@ build:
   tools:
     python: "3.12"
   jobs:
+    post_checkout:
+      - cat mkdocs.yml
+
     post_create_environment:
       - pip install poetry
       - poetry config virtualenvs.create false
 
     post_install:
       - poetry install --only doc
-      - pip install mkdocstrings mkdocstrings-python mkdocs-material mkdocs-macros-plugin
