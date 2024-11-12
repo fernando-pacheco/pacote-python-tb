@@ -14,3 +14,4 @@ build:
 
     post_install:
       - poetry install --only doc
+      - pip install mkdocs-material
