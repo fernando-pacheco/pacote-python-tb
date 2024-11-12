@@ -1,0 +1,30 @@
+site_name: Pacote Python TB
+repo_url: https://github.com/fernando-pacheco/pacote-python-tb
+repo_name: fernando-pacheco/pacote-python-tb
+edit_uri: tree/development/docs
+
+theme:
+  name: material
+  language: pt-BR
+  # logo: assets/logo.png
+  # favicon: assets/logo.png
+
+markdown_extensions: 
+  - attr_list # Utilizado para adicionar uma lista de atributos
+
+# extra_css:
+#   - stylesheets/extra.css # Adicionando estilização css para a documentação
+
+watch:
+  - pacote_python_tb
+
+plugins:
+  - macros
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [pacote_python_tb]
+
+extra:
+  commands:
+    run: poetry run notas-musicais
