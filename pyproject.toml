@@ -4,6 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["Fernando Pacheco <fernandopachecopx@gmail.com>"]
 readme = "README.md"
+packages = [{include = "pacote_python_tb"}]
 
 [tool.poetry.scripts]
 notas-musicais = "pacote_python_tb.cli:app"
