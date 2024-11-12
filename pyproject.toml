@@ -1,7 +1,8 @@
 [tool.poetry]
 name = "pacote-python-tb"
 version = "0.1.0"
-description = ""
+description = "Notas musicais é um CLI para ajudar na formação de escalas, acordes e campos harmônicos"
+license = "BeerWare"
 authors = ["Fernando Pacheco <fernandopachecopx@gmail.com>"]
 readme = "README.md"
 packages = [{include = "pacote_python_tb"}]
