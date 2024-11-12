@@ -36,7 +36,7 @@ Retornando:
 
 #### Alteração a tonalidade da escala
 
-Você pode alterar a tonalidade da escala também! Esse é o segundo parâmetro da linha de comando. Por exemplo, a escala de `D#` maior:
+Você pode alterar a tonalidade da escala também! Esse é o segundo parâmetro da linha de comando. Por exemplo, a escala de `B` maior:
 ```bash
 poetry run notas-musicais escala B maior
 ```
@@ -122,6 +122,48 @@ Retornando:
 │ A# │ C#   │ E  │
 └────┴──────┴────┘
 ```
+## Campo Harmônico
+Você pode chamar o campo harmônico via linha de comando. Por exemplo:
+```bash
+poetry run notas-musicais campo-harmonico
+```
+Retornando, por padrão, os graus e as cifras correspondentes do campo harmônico de `C` maior:
+```
+┏━━━┳━━━━┳━━━━━┳━━━━┳━━━┳━━━━┳━━━━━━┓
+┃ I ┃ ii ┃ iii ┃ IV ┃ V ┃ vi ┃ vii° ┃
+┡━━━╇━━━━╇━━━━━╇━━━━╇━━━╇━━━━╇━━━━━━┩
+│ C │ Dm │ Em  │ F  │ G │ Am │ B°   │
+└───┴────┴─────┴────┴───┴────┴──────┘
+```
+#### Alteração da tônica da campo harmônico
+
+O primeiro parametro do CLI é a tônica da campo harmônico que deseja exibir. Desta forma, você pode alterar o campo harmônico retornado. Por exemplo, o campo harmônico de `A`:
+```bash
+poetry run notas-musicais campo-harmonico A
+```
+Retornando:
+```
+┏━━━┳━━━━┳━━━━━┳━━━━┳━━━┳━━━━━┳━━━━━━┓
+┃ I ┃ ii ┃ iii ┃ IV ┃ V ┃ vi  ┃ vii° ┃
+┡━━━╇━━━━╇━━━━━╇━━━━╇━━━╇━━━━━╇━━━━━━┩
+│ A │ Bm │ C#m │ D  │ E │ F#m │ G#°  │
+└───┴────┴─────┴────┴───┴─────┴──────┘
+```
+
+#### Alteração a tonalidade do campo harmônico
+
+Você pode alterar a tonalidade do campo harmônico também! Esse é o segundo parâmetro da linha de comando. Por exemplo, o campo harmônico de `G#` menor:
+```bash
+poetry run notas-musicais campo-harmonico G# menor
+```
+Retornando:
+```
+┏━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━┳━━━━━┓
+┃ i   ┃ II° ┃ III ┃ iv  ┃ v   ┃ VI ┃ VII ┃
+┡━━━━━╇━━━━━╇━━━━━╇━━━━━╇━━━━━╇━━━━╇━━━━━┩
+│ G#m │ A#° │ B   │ C#m │ D#m │ E  │ F#  │
+└─────┴─────┴─────┴─────┴─────┴────┴─────┘
+```
 
 ## Mais informações sobre o CLI
 
@@ -131,15 +173,16 @@ poetry run notas-musicais --help
                                                                                                                 
  Usage: notas-musicais [OPTIONS] COMMAND [ARGS]...                                                              
                                                                                                                 
-╭─ Options ────────────────────────────────────────────────────────────────────────────────────────────────────╮
-│ --install-completion          Install completion for the current shell.                                      │
-│ --show-completion             Show completion for the current shell, to copy it or customize the             │
-│                               installation.                                                                  │
-│ --help                        Show this message and exit.                                                    │
-╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
-╭─ Commands ───────────────────────────────────────────────────────────────────────────────────────────────────╮
-│ escala                                                                                                       │
-│ acorde                                                                                                       │
-╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ────────────────────────────────────────────────────────────────────────╮
+│ --install-completion          Install completion for the current shell.          │
+│ --show-completion             Show completion for the current shell, to copy it  │
+│                               or customize the installation.                     │
+│ --help                        Show this message and exit.                        │
+╰──────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ───────────────────────────────────────────────────────────────────────╮
+│ escala                                                                           │
+│ acorde                                                                           │
+│ campo-harmonico                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────╯
 
 ```
