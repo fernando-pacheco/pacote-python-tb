@@ -14,5 +14,4 @@ build:
 
     post_install:
       - poetry install --only doc
-      - pip install mkdocs-material
-      - pip install mkdocs-macros-plugin
+      - pip install mkdocstrings mkdocstrings-python mkdocs-material mkdocs-macros-plugin
