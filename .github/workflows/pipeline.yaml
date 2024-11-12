@@ -1,0 +1,31 @@
+name: Pipeline
+on:
+  push:
+    branches:
+      - montar-pipeline
+
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Copiar arquivos do repositório
+        uses: actions/checkout@v4
+        
+      - name: Instalar o Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.7'
+
+      - name: Instalar o Poetry
+        run: pip install poetry
+
+      - name: Instalar as dependências do projeto
+        run: poetry install --without doc
+
+      - name: Rodar os testes
+        run: poetry run task test
