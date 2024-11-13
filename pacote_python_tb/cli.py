@@ -7,6 +7,7 @@ from pacote_python_tb.campo_harmonico import (
     campo_harmonico as _campo_harmonico,
 )
 from pacote_python_tb.escalas import escala as _escala
+from pacote_python_tb.pentatonica import pentatonica as _pentatonica
 
 console = Console()
 app = Typer()
@@ -57,3 +58,13 @@ def campo_harmonico(
     table.add_row(*acordes)
 
     console.print(table)
+
+
+@app.command()
+def pentatonica(
+    nota: str = Argument('A', help='Tônica do campo harmônico'),
+    tonalidade: str = Argument('menor', help='Tonalidade do campo harmônico'),
+):
+    pentatonica = _pentatonica(nota, tonalidade)
+
+    console.print(pentatonica)
